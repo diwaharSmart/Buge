@@ -8,4 +8,4 @@
 
 **SPACE URL :**
 
-    [https://codywood.jetbrains.space/oauth/auth/invite/dc421efac4a4ede35e6d10ec8643d0c7](https://codywood.jetbrains.space/oauth/auth/invite/dc421efac4a4ede35e6d10ec8643d0c7)
+    [https://codywood.jetbrains.space/oauth/auth/invite/dc421efac4a4ede35e6d10ec8643d0c7]
