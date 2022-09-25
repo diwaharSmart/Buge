@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#whqy24irx^n89-oe8cn0jj=_o)@5lk-w!2ozw^a5qjq=%d771'
+SECRET_KEY = os.environ["secrect_key"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ["debug"] == "true" else False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = os.environ["allowed_hosts"].split(",")
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'buge.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,7 +67,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'buge.wsgi.application'
+if os.environ["application_type"]=="wsgi":
+    WSGI_APPLICATION = 'buge.wsgi.application'
+else:
+    ASGI_APPLICATION = 'buge.asgi.application'
 
 
 # Database
@@ -116,6 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

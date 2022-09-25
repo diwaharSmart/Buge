@@ -19,6 +19,7 @@
 # print(args.accumulate(args.integers))
 
 import os
+os.putenv("debug","true")
 
 cmd = "py buge/manage.py runserver 127.0.0.1:8060"
 

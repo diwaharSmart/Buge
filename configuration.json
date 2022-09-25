@@ -1,6 +1,7 @@
 {
   "ip_address" : "127.0.0.1",
   "port"       : "8000",
-  "allowed_ip" : ["*"],
-  "debug"      : true,
+  "allowed_hosts" : "*",
+  "debug"      : "true",
+  "secrect_key": "django-insecure-#whqy24irx^n89-oe8cn0jj=_o)@5lk-w!2ozw^a5qjq=%d771",
 }
