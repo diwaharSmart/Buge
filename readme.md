@@ -20,3 +20,8 @@ This is the main concept
 
 Inspired by Odoo
 
+** Run Command **
+     
+     Direct Run                | python bin.py -c configuration.json
+     Run with django commands  | python bin.py -c configuration.json --dj_command = createsuperuser     
+
