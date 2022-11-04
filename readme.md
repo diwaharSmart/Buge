@@ -6,9 +6,16 @@
     4. Module Base Panel Development 
     5. ERP & CMS
 
-**SPACE URL :**
 
-    [https://codywood.jetbrains.space/oauth/auth/invite/dc421efac4a4ede35e6d10ec8643d0c7]
+
+Concept : ( Develop after deployed )
+1. CURD Operations on Web Templates on live websites
+2. CURD Operations on Models , Views , Controller on live website using django admin 
+
+
+
+Backup your data and reuse your code(database) in single platform.
+This is the main concept
 
 
 Inspired by Odoo
