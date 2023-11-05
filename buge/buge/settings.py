@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base',
     'rest_framework',
+    'base',
+    'bg_admin',
+    'website',
+    'location_tracker_client',
 ]
 
 MIDDLEWARE = [
@@ -80,12 +83,8 @@ else:
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'testdb2',
-        'USER': 'postgres',
-        'PASSWORD': 'Diwah@r123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'buge.sqlite3'),
     }
 }
 

@@ -14,8 +14,11 @@ def start_buge_server():
     all_args.add_argument("-dj_cmd", "--django_command", required=False,
                           help="DJANGO COMMANDS")
 
+    all_args.add_argument("-dj_mdl", "--django_model", required=False,
+                          help="DJANGO COMMANDS")
     args = vars(all_args.parse_args())
 
+    # Load configuration file
     with open(args["conf"], "r") as file:
         config = json.load(file)
 
@@ -32,7 +35,10 @@ def start_buge_server():
         os.system(cmd)
 
     else:
-        cmd = "py buge/manage.py "+args["django_command"]
+        if args["django_model"] is None:
+            args["django_model"]=str()
+
+        cmd = "py buge/manage.py "+args["django_command"]+str(" ")+args["django_model"]
         os.system(cmd)
 
 
